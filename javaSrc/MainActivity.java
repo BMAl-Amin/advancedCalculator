@@ -1,5 +1,6 @@
 package com.example.alamin.calculator;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -113,10 +114,66 @@ public class MainActivity extends AppCompatActivity {
                 textView.setText(textView.getText().toString() + divide.getText().toString());
             }
         });
+
+        //functional buttons implementation
         eQual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textView.setText(textView.getText().toString() + dOt.getText().toString());
+            //i will write code later
+            }
+        });
+        clr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textView.setText(null);
+            }
+        });
+        sqrt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //i will write code later
+            }
+        });
+        sqr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //i will write code later
+            }
+        });
+        percent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //i will write code later
+            }
+        });
+
+        //other activities button implementation
+        log.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this, LogarithmActivity.class);
+                startActivity(intent);
+            }
+        });
+        scientific.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this, ScientificActivity.class);
+                startActivity(intent);
+            }
+        });
+        currency.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this, CurrencyActivity.class);
+                startActivity(intent);
+            }
+        });
+        numberC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this, NumberConvert.class);
+                startActivity(intent);
             }
         });
     }
