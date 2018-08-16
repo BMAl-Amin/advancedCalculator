@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
     private Button oNe, tWo, tHree, fOur, fIve, sIx, sEven, eIght, nIne, zEro, dOt; //all digits declare here
     private Button add, subtract, multiply, divide, percent, sqrt, sqr, eQual; // all signs declare here
     private Button log, currency, scientific, numberC, clr; //other layouts declare here
+    private boolean isAdd, isSubtract, isMultiply, isDivide;
+    private double numberA, numberB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,25 +95,33 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textView.setText(textView.getText().toString() + add.getText().toString());
+                isAdd=true;
+                numberA= Double.parseDouble(textView.getText().toString()); //convert number type string to double
+                textView.setText(null);
             }
         });
         subtract.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textView.setText(textView.getText().toString() + subtract.getText().toString());
+                isSubtract=true;
+                numberA= Double.parseDouble(textView.getText().toString()); //convert number type string to double
+                textView.setText(null);
             }
         });
         multiply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textView.setText(textView.getText().toString() + multiply.getText().toString());
+                isMultiply=true;
+                numberA= Double.parseDouble(textView.getText().toString());  //convert number type string to double
+                textView.setText(null);
             }
         });
         divide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textView.setText(textView.getText().toString() + divide.getText().toString());
+                isDivide=true;
+                numberA= Double.parseDouble(textView.getText().toString());  //convert number type string to double
+                textView.setText(null);
             }
         });
 
@@ -119,7 +129,28 @@ public class MainActivity extends AppCompatActivity {
         eQual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            //i will write code later
+                numberB= Double.parseDouble(textView.getText().toString()); //convert number type string to double
+                if(isAdd){
+                    calService.calculateAddition(numberA, numberB);
+                    textView.setText("add");
+                    isAdd=false;
+                } else if(isSubtract){
+                    calService.calculateSubtraction(numberA, numberB);
+                    textView.setText("sub");
+                    isSubtract=false;
+                } else if(isMultiply){
+                    calService.calculateMultiplication(numberA, numberB);
+                    textView.setText("mul");
+                    isMultiply=false;
+                } else if(isDivide){
+                    calService.calculateDivision(numberA, numberB);
+                    textView.setText("div");
+                    isDivide=false;
+                }
+                else{
+                    textView.setText("Unable to generate answer");
+                }
+                textView.setText(calService.getResult().toString());  //view result on screen
             }
         });
         clr.setOnClickListener(new View.OnClickListener() {
