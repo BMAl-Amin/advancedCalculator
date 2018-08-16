@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private CalculatorService calService;
+    private CalculatorService calService; //declare object of CalculatorService class
     TextView textView;
     private Button oNe, tWo, tHree, fOur, fIve, sIx, sEven, eIght, nIne, zEro, dOt; //all digits declare here
     private Button add, subtract, multiply, divide, percent, sqrt, sqr, eQual; // all signs declare here
@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        calService= new CalculatorService(); //initialize memory location for CalculatorService class
 
         setupUIView(); //calling method
 
