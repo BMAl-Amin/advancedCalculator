@@ -131,26 +131,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 numberB= Double.parseDouble(textView.getText().toString()); //convert number type string to double
                 if(isAdd){
-                    calService.calculateAddition(numberA, numberB);
-                    textView.setText("add");
+                    textView.setText(calService.calculateAddition(numberA, numberB)); //show result on screen
                     isAdd=false;
                 } else if(isSubtract){
-                    calService.calculateSubtraction(numberA, numberB);
-                    textView.setText("sub");
+                    textView.setText(calService.calculateSubtraction(numberA, numberB)); //show result on screen
                     isSubtract=false;
                 } else if(isMultiply){
-                    calService.calculateMultiplication(numberA, numberB);
-                    textView.setText("mul");
+                    textView.setText(calService.calculateMultiplication(numberA, numberB)); //show result on screen
                     isMultiply=false;
                 } else if(isDivide){
-                    calService.calculateDivision(numberA, numberB);
-                    textView.setText("div");
+                    textView.setText(calService.calculateDivision(numberA, numberB)); //show result on screen
                     isDivide=false;
+                }else{
+                    textView.setText(String.valueOf(numberA));
                 }
-                else{
-                    textView.setText("Unable to generate answer");
-                }
-                textView.setText(calService.getResult().toString());  //view result on screen
             }
         });
         clr.setOnClickListener(new View.OnClickListener() {
