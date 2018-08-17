@@ -7,18 +7,33 @@
     tools:context=".MainActivity"
     tools:layout_editor_absoluteY="25dp">
 
-    <EditText
+    <TextView
+        android:id="@+id/textview"
         android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:id="@+id/display"
-        android:textSize="50sp"
-        android:background="#454545"
-        android:text="1234567890"
-        android:fontFamily="casual"
-        android:textStyle="bold"
-        android:textColor="#7d947a"
+        android:layout_height="30dp"
         android:layout_gravity="end"
+        android:fontFamily="casual"
+        android:paddingLeft="5dp"
+        android:text=""
         android:textAlignment="textEnd"
+        android:textColor="#00042e"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+    <EditText
+        android:id="@+id/edittext"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="end"
+        android:background="#454545"
+        android:cursorVisible="false"
+        android:fontFamily="casual"
+        android:paddingLeft="5dp"
+        android:text=""
+        android:textAlignment="textEnd"
+        android:textColor="#7d947a"
+        android:textSize="30sp"
+        android:textStyle="bold"
         />
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,11 +57,11 @@
             android:layout_width="75dp"
             android:layout_height="match_parent"
             android:layout_marginRight="2dp"
-            android:textAllCaps="false"
             android:background="#00042e"
             android:fontFamily="sans-serif"
             android:padding="3dp"
             android:text="\u221ax"
+            android:textAllCaps="false"
             android:textColor="#ffffff"
             android:textSize="40sp" />
 
@@ -57,9 +72,9 @@
             android:layout_marginRight="2dp"
             android:background="#00042e"
             android:fontFamily="sans-serif"
-            android:textAllCaps="false"
             android:padding="3dp"
             android:text="x\u00b2"
+            android:textAllCaps="false"
             android:textColor="#ffffff"
             android:textSize="40sp" />
 
@@ -293,69 +308,31 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="2dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_marginBottom="2dp">
-            <Button
-                android:id="@+id/log"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginRight="2dp"
-                android:text="Logarithm"
-                android:textAllCaps="false"
-                android:background="@drawable/buttonshape"
-                android:fontFamily="cursive"
-                android:padding="3dp"
-                android:textColor="#ffffff"
-                android:textSize="20sp"/>
+        android:layout_marginTop="2dp"
+        android:orientation="vertical">
             <Button
                 android:id="@+id/science"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@drawable/buttonshape"
+                android:fontFamily="cursive"
+                android:padding="3dp"
                 android:text="Scientific"
                 android:textAllCaps="false"
-                android:background="@drawable/buttonshape"
-                android:fontFamily="cursive"
-                android:padding="3dp"
-                android:textColor="#ffffff"
-                android:textSize="20sp"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-            <Button
-                android:id="@+id/currency"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-
-                android:layout_weight="1"
-                android:layout_marginRight="2dp"
-                android:text="Currency Convert"
-                android:textAllCaps="false"
-                android:background="@drawable/buttonshape"
-                android:fontFamily="cursive"
-                android:padding="3dp"
                 android:textColor="#ffffff"
                 android:textSize="20sp"/>
             <Button
                 android:id="@+id/number"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Number Convert"
-                android:textAllCaps="false"
                 android:background="@drawable/buttonshape"
                 android:fontFamily="cursive"
                 android:padding="3dp"
+                android:text="Number Convert"
+                android:textAllCaps="false"
                 android:textColor="#ffffff"
                 android:textSize="20sp"/>
-        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
