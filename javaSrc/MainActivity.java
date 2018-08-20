@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText editText;
     private Button oNe, tWo, tHree, fOur, fIve, sIx, sEven, eIght, nIne, zEro, dOt; //all digits declare here
     private Button add, subtract, multiply, divide, percent, sqrt, sqr, eQual, clr; // all signs declare here
-    private Button log, currency, scientific, numberC; //other layouts declare here
+    private Button scientific, numberC; //other layouts declare here
     private boolean isAddClicked, isSubtractClicked, isMultiplyClicked, isDivideClicked, isEqualClicked,
             isSqrClicked, isSqrtClicked, isPercentClicked;
     private double numberA, numberB;
@@ -356,13 +356,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        numberC.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, NumberConvert.class);
-                startActivity(intent);
-            }
-        });
     }
 
     private void setupUIView() { //getting user data by implementing xml properties
@@ -397,9 +390,7 @@ public class MainActivity extends AppCompatActivity {
 
         //other layouts initialize here
         //log, currency, scientific, numberC
-        log = findViewById(R.id.log);
         scientific = findViewById(R.id.science);
-        currency = findViewById(R.id.currency);
         numberC = findViewById(R.id.number);
     }
 
